@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+public class GuessNumber {
+	    private static final int MIN=1;
+		private static final int MAX=100;
+		private static final int TRAILS=6;
+		private static final int MAX_ROUNDS=5;
+		public static void main(String args[]) {
+		Random rad=new Random();
+      	Scanner sc=new Scanner(System.in);
+      	int totalscore=0;
+		System.out.println("pick a number between 0 and 100(you have six chances):\n");
+		for(int p=0;p<=MAX_ROUNDS;p++) {
+		int number=random.nextInt(MAX)+MIN;
+		int attempts=0;
+		//this ia the initial count of the number.
+		System.out.printf(format:"round %d:guess the number between %d and %d in %d trails.\n",p,MIN.TRAILS);
+		while(attempts<TRAILS){
+			System.out.println("enter your guessing number : ");
+			int guess_number=sc.nextInt();
+			attempt=attempt+1;
+			if(guess_number==number) {
+				int score=TRAILS-attempt;
+				totalscore+=score;
+				System.out.printf(format:"woww!! you guessed the number successsfully....you took %d attempts,score=%d",attempt,score);
+			break;
+			}
+			else if(guess_number<number) {
+				System.out.println("oops!!..you guessed the wrong number");
+				System.out.printf(format:"the number is greater than %d..you have only %d attempts\n.",guess_number,TRAILS-attempt);
+			}
+			else if(guess_number>number) {
+				System.out.println("oops!! you guessed wrong number");
+				System.out.printf(format:"The number is less than %d..you have onll %d attempts\n.",guees_number,TRAILS-attempt);
+			}
+		}
+		if(attempt==TRAILS) {	
+			System.out.println("you failed to guess the number");
+			System.out.printf(format:"\nround = %d\n.",p);
+			System.out.printf(format:"The random number is: %d\n",number);
+		}
+		System.out.printf(format:"Game over.\n totalscore = %d\n.",totalscore);
+		sc.close();
+		}
+		}
+		}
